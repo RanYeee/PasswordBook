@@ -1,0 +1,14 @@
+//
+//  PB-Prefix.pch
+//  PasswordBook
+//
+//  Created by Rany on 16/9/1.
+//  Copyright © 2016年 Rany. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "RNAppMacro.h"
+
+#endif
