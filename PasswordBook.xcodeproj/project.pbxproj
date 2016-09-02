@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290DCFE41D791322008F4B85 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DCFE21D791322008F4B85 /* MainViewController.m */; };
+		290DCFE71D79136E008F4B85 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DCFE61D79136E008F4B85 /* LoginViewController.m */; };
+		290DCFEA1D791385008F4B85 /* LoginBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DCFE91D791385008F4B85 /* LoginBackgroundView.m */; };
+		290DD0361D791F2B008F4B85 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0191D791F2B008F4B85 /* CALayer+Addition.m */; };
+		290DD0371D791F2B008F4B85 /* NSDate+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD01B1D791F2B008F4B85 /* NSDate+DDAddition.m */; };
+		290DD0381D791F2B008F4B85 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD01D1D791F2B008F4B85 /* NSDictionary+JSON.m */; };
+		290DD0391D791F2B008F4B85 /* NSObject+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD01F1D791F2B008F4B85 /* NSObject+log.m */; };
+		290DD03A1D791F2B008F4B85 /* NSObject+reflectValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0211D791F2B008F4B85 /* NSObject+reflectValue.m */; };
+		290DD03B1D791F2B008F4B85 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0231D791F2B008F4B85 /* NSString+Additions.m */; };
+		290DD03C1D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0251D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.m */; };
+		290DD03D1D791F2B008F4B85 /* UIButton+Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0271D791F2B008F4B85 /* UIButton+Prescription.m */; };
+		290DD03E1D791F2B008F4B85 /* UIColor+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0291D791F2B008F4B85 /* UIColor+HRExtension.m */; };
+		290DD03F1D791F2B008F4B85 /* UIImage+AssetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD02B1D791F2B008F4B85 /* UIImage+AssetImage.m */; };
+		290DD0401D791F2B008F4B85 /* UIImage+UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD02D1D791F2B008F4B85 /* UIImage+UIImageAddition.m */; };
+		290DD0411D791F2B008F4B85 /* UINavigationItem+CustomBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD02F1D791F2B008F4B85 /* UINavigationItem+CustomBackButton.m */; };
+		290DD0421D791F2B008F4B85 /* UIView+DDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0311D791F2B008F4B85 /* UIView+DDAddition.m */; };
+		290DD0431D791F2B008F4B85 /* UIView+SHCZExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0331D791F2B008F4B85 /* UIView+SHCZExt.m */; };
+		290DD0441D791F2B008F4B85 /* UIView+SimpleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0351D791F2B008F4B85 /* UIView+SimpleAnimation.m */; };
+		290DD0471D795397008F4B85 /* LoginMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0461D795397008F4B85 /* LoginMaskView.m */; };
+		290DD04A1D797770008F4B85 /* UIHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD0491D797770008F4B85 /* UIHelpers.m */; };
+		290DD0501D7977E4008F4B85 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DD04D1D7977E4008F4B85 /* Colours.m */; };
 		2998D27E1D781CE400C27418 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998D27D1D781CE400C27418 /* main.m */; };
 		2998D2811D781CE400C27418 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998D2801D781CE400C27418 /* AppDelegate.m */; };
 		2998D2871D781CE400C27418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2998D2851D781CE400C27418 /* Main.storyboard */; };
@@ -34,6 +55,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290DCFE11D791322008F4B85 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		290DCFE21D791322008F4B85 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		290DCFE51D79136E008F4B85 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		290DCFE61D79136E008F4B85 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		290DCFE81D791385008F4B85 /* LoginBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginBackgroundView.h; sourceTree = "<group>"; };
+		290DCFE91D791385008F4B85 /* LoginBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginBackgroundView.m; sourceTree = "<group>"; };
+		290DD0181D791F2B008F4B85 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
+		290DD0191D791F2B008F4B85 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
+		290DD01A1D791F2B008F4B85 /* NSDate+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DDAddition.h"; sourceTree = "<group>"; };
+		290DD01B1D791F2B008F4B85 /* NSDate+DDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DDAddition.m"; sourceTree = "<group>"; };
+		290DD01C1D791F2B008F4B85 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		290DD01D1D791F2B008F4B85 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		290DD01E1D791F2B008F4B85 /* NSObject+log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+log.h"; sourceTree = "<group>"; };
+		290DD01F1D791F2B008F4B85 /* NSObject+log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+log.m"; sourceTree = "<group>"; };
+		290DD0201D791F2B008F4B85 /* NSObject+reflectValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+reflectValue.h"; sourceTree = "<group>"; };
+		290DD0211D791F2B008F4B85 /* NSObject+reflectValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+reflectValue.m"; sourceTree = "<group>"; };
+		290DD0221D791F2B008F4B85 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		290DD0231D791F2B008F4B85 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		290DD0241D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HRNagativeSpace.h"; sourceTree = "<group>"; };
+		290DD0251D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HRNagativeSpace.m"; sourceTree = "<group>"; };
+		290DD0261D791F2B008F4B85 /* UIButton+Prescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Prescription.h"; sourceTree = "<group>"; };
+		290DD0271D791F2B008F4B85 /* UIButton+Prescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Prescription.m"; sourceTree = "<group>"; };
+		290DD0281D791F2B008F4B85 /* UIColor+HRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HRExtension.h"; sourceTree = "<group>"; };
+		290DD0291D791F2B008F4B85 /* UIColor+HRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HRExtension.m"; sourceTree = "<group>"; };
+		290DD02A1D791F2B008F4B85 /* UIImage+AssetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AssetImage.h"; sourceTree = "<group>"; };
+		290DD02B1D791F2B008F4B85 /* UIImage+AssetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AssetImage.m"; sourceTree = "<group>"; };
+		290DD02C1D791F2B008F4B85 /* UIImage+UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageAddition.h"; sourceTree = "<group>"; };
+		290DD02D1D791F2B008F4B85 /* UIImage+UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageAddition.m"; sourceTree = "<group>"; };
+		290DD02E1D791F2B008F4B85 /* UINavigationItem+CustomBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CustomBackButton.h"; sourceTree = "<group>"; };
+		290DD02F1D791F2B008F4B85 /* UINavigationItem+CustomBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CustomBackButton.m"; sourceTree = "<group>"; };
+		290DD0301D791F2B008F4B85 /* UIView+DDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DDAddition.h"; sourceTree = "<group>"; };
+		290DD0311D791F2B008F4B85 /* UIView+DDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DDAddition.m"; sourceTree = "<group>"; };
+		290DD0321D791F2B008F4B85 /* UIView+SHCZExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SHCZExt.h"; sourceTree = "<group>"; };
+		290DD0331D791F2B008F4B85 /* UIView+SHCZExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SHCZExt.m"; sourceTree = "<group>"; };
+		290DD0341D791F2B008F4B85 /* UIView+SimpleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SimpleAnimation.h"; sourceTree = "<group>"; };
+		290DD0351D791F2B008F4B85 /* UIView+SimpleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SimpleAnimation.m"; sourceTree = "<group>"; };
+		290DD0451D795397008F4B85 /* LoginMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMaskView.h; sourceTree = "<group>"; };
+		290DD0461D795397008F4B85 /* LoginMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMaskView.m; sourceTree = "<group>"; };
+		290DD0481D797770008F4B85 /* UIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelpers.h; sourceTree = "<group>"; };
+		290DD0491D797770008F4B85 /* UIHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelpers.m; sourceTree = "<group>"; };
+		290DD04C1D7977E4008F4B85 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		290DD04D1D7977E4008F4B85 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		2998D2791D781CE400C27418 /* PasswordBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2998D27D1D781CE400C27418 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2998D27F1D781CE400C27418 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +140,132 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290DCFCE1D791218008F4B85 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				290DD0181D791F2B008F4B85 /* CALayer+Addition.h */,
+				290DD0191D791F2B008F4B85 /* CALayer+Addition.m */,
+				290DD01A1D791F2B008F4B85 /* NSDate+DDAddition.h */,
+				290DD01B1D791F2B008F4B85 /* NSDate+DDAddition.m */,
+				290DD01C1D791F2B008F4B85 /* NSDictionary+JSON.h */,
+				290DD01D1D791F2B008F4B85 /* NSDictionary+JSON.m */,
+				290DD01E1D791F2B008F4B85 /* NSObject+log.h */,
+				290DD01F1D791F2B008F4B85 /* NSObject+log.m */,
+				290DD0201D791F2B008F4B85 /* NSObject+reflectValue.h */,
+				290DD0211D791F2B008F4B85 /* NSObject+reflectValue.m */,
+				290DD0221D791F2B008F4B85 /* NSString+Additions.h */,
+				290DD0231D791F2B008F4B85 /* NSString+Additions.m */,
+				290DD0241D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.h */,
+				290DD0251D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.m */,
+				290DD0261D791F2B008F4B85 /* UIButton+Prescription.h */,
+				290DD0271D791F2B008F4B85 /* UIButton+Prescription.m */,
+				290DD0281D791F2B008F4B85 /* UIColor+HRExtension.h */,
+				290DD0291D791F2B008F4B85 /* UIColor+HRExtension.m */,
+				290DD02A1D791F2B008F4B85 /* UIImage+AssetImage.h */,
+				290DD02B1D791F2B008F4B85 /* UIImage+AssetImage.m */,
+				290DD02C1D791F2B008F4B85 /* UIImage+UIImageAddition.h */,
+				290DD02D1D791F2B008F4B85 /* UIImage+UIImageAddition.m */,
+				290DD02E1D791F2B008F4B85 /* UINavigationItem+CustomBackButton.h */,
+				290DD02F1D791F2B008F4B85 /* UINavigationItem+CustomBackButton.m */,
+				290DD0301D791F2B008F4B85 /* UIView+DDAddition.h */,
+				290DD0311D791F2B008F4B85 /* UIView+DDAddition.m */,
+				290DD0321D791F2B008F4B85 /* UIView+SHCZExt.h */,
+				290DD0331D791F2B008F4B85 /* UIView+SHCZExt.m */,
+				290DD0341D791F2B008F4B85 /* UIView+SimpleAnimation.h */,
+				290DD0351D791F2B008F4B85 /* UIView+SimpleAnimation.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		290DCFD01D791218008F4B85 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				290DD04B1D7977E4008F4B85 /* Colours */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		290DCFD11D791218008F4B85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				290DD0481D797770008F4B85 /* UIHelpers.h */,
+				290DD0491D797770008F4B85 /* UIHelpers.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		290DCFDB1D791322008F4B85 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFDC1D791322008F4B85 /* Login */,
+				290DCFDF1D791322008F4B85 /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		290DCFDC1D791322008F4B85 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFDD1D791322008F4B85 /* Controllers */,
+				290DCFDE1D791322008F4B85 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		290DCFDD1D791322008F4B85 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFE51D79136E008F4B85 /* LoginViewController.h */,
+				290DCFE61D79136E008F4B85 /* LoginViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		290DCFDE1D791322008F4B85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFE81D791385008F4B85 /* LoginBackgroundView.h */,
+				290DCFE91D791385008F4B85 /* LoginBackgroundView.m */,
+				290DD0451D795397008F4B85 /* LoginMaskView.h */,
+				290DD0461D795397008F4B85 /* LoginMaskView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		290DCFDF1D791322008F4B85 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFE01D791322008F4B85 /* Controllers */,
+				290DCFE31D791322008F4B85 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		290DCFE01D791322008F4B85 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				290DCFE11D791322008F4B85 /* MainViewController.h */,
+				290DCFE21D791322008F4B85 /* MainViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		290DCFE31D791322008F4B85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		290DD04B1D7977E4008F4B85 /* Colours */ = {
+			isa = PBXGroup;
+			children = (
+				290DD04C1D7977E4008F4B85 /* Colours.h */,
+				290DD04D1D7977E4008F4B85 /* Colours.m */,
+			);
+			path = Colours;
+			sourceTree = "<group>";
+		};
 		2998D2701D781CE400C27418 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +289,10 @@
 		2998D27B1D781CE400C27418 /* PasswordBook */ = {
 			isa = PBXGroup;
 			children = (
-				2998D27F1D781CE400C27418 /* AppDelegate.h */,
-				2998D2801D781CE400C27418 /* AppDelegate.m */,
+				290DCFDB1D791322008F4B85 /* Classes */,
+				290DCFCE1D791218008F4B85 /* Categories */,
+				290DCFD01D791218008F4B85 /* ThirdPart */,
+				290DCFD11D791218008F4B85 /* Utils */,
 				2998D2851D781CE400C27418 /* Main.storyboard */,
 				2998D2881D781CE400C27418 /* Assets.xcassets */,
 				2998D28A1D781CE400C27418 /* LaunchScreen.storyboard */,
@@ -115,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				2998D27D1D781CE400C27418 /* main.m */,
+				2998D27F1D781CE400C27418 /* AppDelegate.h */,
+				2998D2801D781CE400C27418 /* AppDelegate.m */,
 				2998D2AF1D781D4700C27418 /* PB-Prefix.pch */,
 				2998D2B01D781D8400C27418 /* RNAppMacro.h */,
 			);
@@ -269,7 +462,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290DCFE71D79136E008F4B85 /* LoginViewController.m in Sources */,
+				290DD03D1D791F2B008F4B85 /* UIButton+Prescription.m in Sources */,
+				290DD0361D791F2B008F4B85 /* CALayer+Addition.m in Sources */,
+				290DD0381D791F2B008F4B85 /* NSDictionary+JSON.m in Sources */,
+				290DD03B1D791F2B008F4B85 /* NSString+Additions.m in Sources */,
+				290DD04A1D797770008F4B85 /* UIHelpers.m in Sources */,
+				290DD0471D795397008F4B85 /* LoginMaskView.m in Sources */,
 				2998D2811D781CE400C27418 /* AppDelegate.m in Sources */,
+				290DD0421D791F2B008F4B85 /* UIView+DDAddition.m in Sources */,
+				290DD0371D791F2B008F4B85 /* NSDate+DDAddition.m in Sources */,
+				290DD03C1D791F2B008F4B85 /* UIBarButtonItem+HRNagativeSpace.m in Sources */,
+				290DD03A1D791F2B008F4B85 /* NSObject+reflectValue.m in Sources */,
+				290DD03E1D791F2B008F4B85 /* UIColor+HRExtension.m in Sources */,
+				290DD0431D791F2B008F4B85 /* UIView+SHCZExt.m in Sources */,
+				290DD03F1D791F2B008F4B85 /* UIImage+AssetImage.m in Sources */,
+				290DD0441D791F2B008F4B85 /* UIView+SimpleAnimation.m in Sources */,
+				290DCFEA1D791385008F4B85 /* LoginBackgroundView.m in Sources */,
+				290DD0391D791F2B008F4B85 /* NSObject+log.m in Sources */,
+				290DD0411D791F2B008F4B85 /* UINavigationItem+CustomBackButton.m in Sources */,
+				290DD0501D7977E4008F4B85 /* Colours.m in Sources */,
+				290DD0401D791F2B008F4B85 /* UIImage+UIImageAddition.m in Sources */,
+				290DCFE41D791322008F4B85 /* MainViewController.m in Sources */,
 				2998D27E1D781CE400C27418 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +714,7 @@
 				2998D2A81D781CE400C27418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2998D2A91D781CE400C27418 /* Build configuration list for PBXNativeTarget "PasswordBookTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +723,7 @@
 				2998D2AB1D781CE400C27418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2998D2AC1D781CE400C27418 /* Build configuration list for PBXNativeTarget "PasswordBookUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +732,7 @@
 				2998D2AE1D781CE400C27418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
