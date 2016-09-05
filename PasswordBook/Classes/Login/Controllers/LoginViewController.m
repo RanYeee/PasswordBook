@@ -32,23 +32,23 @@
     
     [self.view addSubview:bgView];
     
-    [bgView starLighting];
+    [bgView starLightingWithDuration:1.5];
     
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [bgView fadeOutComplete:^{
-           
-            [self animateVCLeavingWithCompletion:^{
-                
-                [self launchViewController:[[MainViewController alloc]init]];
-                
-            }];
-            
-        }];
-  
-    });
-  
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        [bgView fadeOutComplete:^{
+//           
+//            [self animateVCLeavingWithCompletion:^{
+//                
+//                [self launchViewController:[[MainViewController alloc]init]];
+//                
+//            }];
+//            
+//        }];
+//  
+//    });
+//  
 }
 
 

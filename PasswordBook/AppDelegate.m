@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,8 @@
     self.window.rootViewController = self.mainNavigationController;
     
     [self.window makeKeyAndVisible];
+    
+    [[IQKeyboardManager sharedManager]setEnable:YES];
     
     return YES;
 }

@@ -11,7 +11,7 @@
 @interface LoginBackgroundView : UIView
 
 
-- (void)starLighting;
+- (void)starLightingWithDuration:(float)duration;
 
 - (void)fadeOutComplete:(void(^)())complete;
 

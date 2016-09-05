@@ -9,8 +9,10 @@
 
 #import "LoginBackgroundView.h"
 #import "LoginMaskView.h"
+#import "LoginBoxView.h"
 
 #define kFadeOutDuration 1.0
+
 
 @interface LoginBackgroundView ()
 
@@ -23,6 +25,11 @@
 @property (nonatomic,strong) UIView *topContainView;
 
 @property (nonatomic,strong) UIView *bottomContainView;
+
+@property (nonatomic,strong) UIImageView *logoImageView;
+
+@property (nonatomic,strong) LoginBoxView *boxView;
+
 
 @end
 
@@ -42,6 +49,25 @@
     return self;
 }
 
+#pragma mark - getter
+
+- (LoginBoxView *)boxView
+{
+    if (!_boxView) {
+        
+        CGFloat boxW = SCREEN_WIDTH-20;
+        
+        CGFloat boxH = boxW * 2 / 2.5;
+        
+        _boxView = [[LoginBoxView alloc]initWithFrame:CGRectMake(20, 0, boxW, boxH)];
+        
+        _boxView.center = CGPointMake(self.width/2, self.height/2);
+        
+    }
+    
+    return _boxView;
+}
+
 -(UIView *)topContainView
 {
     if (!_topContainView) {
@@ -49,6 +75,8 @@
         _topContainView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/2)];
         
         _topContainView.backgroundColor = [UIColor colorWithHexString:@"#000C24"];
+        
+//        [_topContainView addSubview:self.logoImageView];
         
         [self addSubview:_topContainView];
         
@@ -72,16 +100,35 @@
     return _bottomContainView;
 }
 
+- (UIImageView *)logoImageView
+{
+    if (!_logoImageView) {
+        
+        _logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loginText"]];
+        
+        _logoImageView.frame = CGRectMake(24, 40, 136, 48);
+        
+        _logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+
+        
+    }
+    
+    return _logoImageView;
+}
+
 - (void)setupView
 {
-    
+    [self insertSubview:self.logoImageView aboveSubview:self.topContainView];
+
+    [self insertSubview:self.boxView aboveSubview:self.bottomContainView];
     //maskView
 
     UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height/2)];
     
     LoginMaskView *maskView1 = [[LoginMaskView alloc]initWithFrame:topView.bounds];
 
-    topView.backgroundColor = [UIColor colorWithHexString:@"#19346B"];
+    topView.backgroundColor = [UIColor colorWithHexString:@"#000C24"];
     
     
     topView.maskView = maskView1;
@@ -100,7 +147,7 @@
 
     UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.width, topView.height)];
     
-    bottomView.backgroundColor = [UIColor colorWithHexString:@"#19346B"];
+    bottomView.backgroundColor = [UIColor colorWithHexString:@"#000C24"];
     
     LoginMaskView *maskView2 = [[LoginMaskView alloc]initWithFrame:bottomView.bounds];;
     
@@ -115,20 +162,63 @@
     [bottomView addSubview:_bottomLightView];
     
     [self.bottomContainView addSubview:bottomView];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        [self.boxView hideAndLoading];
+//        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            [self stopLighting];
+//            [self warningLight];
+//            [self.boxView show];
+//            
+//        });
+//        
+//    });
 
 
 }
 
-- (void)starLighting
+#pragma mark - Animation
+
+- (void)starLightingWithDuration:(float)duration
 {
-    [_topLightView.layer addAnimation:[self AlphaLight:1.5] forKey:@"aAlpha"];
+    [_topLightView.layer addAnimation:[self AlphaLight:duration] forKey:@"aAlpha"];
     
-    [_bottomLightView.layer addAnimation:[self AlphaLight:1.5] forKey:@"aAlpha"];
+    [_bottomLightView.layer addAnimation:[self AlphaLight:duration] forKey:@"aAlpha"];
 
 }
 
 - (void)stopLighting
 {
+    [_topLightView.layer removeAnimationForKey:@"aAlpha"];
+    
+    [_bottomLightView.layer removeAnimationForKey:@"aAlpha"];
+    
+    _topLightView.alpha = 1.0f;
+    
+    _bottomLightView.alpha = 1.0f;
+
+}
+
+- (void)warningLight
+{
+    _topLightView.backgroundColor = [UIColor redColor];
+    
+    _bottomLightView.backgroundColor = [UIColor redColor];
+    
+    _topLightView.alpha = 0.0f;
+    
+    _bottomLightView.alpha = 0.0f;
+    
+    [self starLightingWithDuration:0.4];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self stopLighting];
+        
+    });
     
 }
 
