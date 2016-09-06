@@ -9,7 +9,6 @@
 
 #import "LoginBackgroundView.h"
 #import "LoginMaskView.h"
-#import "LoginBoxView.h"
 
 #define kFadeOutDuration 1.0
 
@@ -19,6 +18,7 @@
 {
     UIView *_topLightView;
     UIView *_bottomLightView;
+    
 }
 
 
@@ -28,7 +28,7 @@
 
 @property (nonatomic,strong) UIImageView *logoImageView;
 
-@property (nonatomic,strong) LoginBoxView *boxView;
+
 
 
 @end
@@ -62,6 +62,7 @@
         _boxView = [[LoginBoxView alloc]initWithFrame:CGRectMake(20, 0, boxW, boxH)];
         
         _boxView.center = CGPointMake(self.width/2, self.height/2);
+        
         
     }
     
@@ -214,10 +215,12 @@
     
     [self starLightingWithDuration:0.4];
     
+    __weak typeof(self) weakSelf = self;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [self stopLighting];
-        
+        [weakSelf stopLighting];
+        [weakSelf.boxView endLoading];
     });
     
 }
@@ -241,6 +244,10 @@
 
 - (void)fadeOutComplete:(void(^)())complete
 {
+    _bottomLightView.backgroundColor = [UIColor colorWithHexString:@"#6490E8"];
+
+    _topLightView.backgroundColor = [UIColor colorWithHexString:@"#6490E8"];
+
     [self runningLineFinish:^{
         
         [self fadeOutAnimationComplete:^{
@@ -256,13 +263,15 @@
 {
     __block UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, self.height/2, SCREEN_WIDTH, 2)];
     
-    line1.backgroundColor = [UIColor whiteColor];
+    line1.backgroundColor = [UIColor colorWithHexString:@"#86E1EC"];
     
     [self addSubview:line1];
     
+    
+    
     [UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         line1.frame = CGRectMake(0, self.height/2, SCREEN_WIDTH, 2);
-
+        self.logoImageView.alpha = 0.0f;
     } completion:^(BOOL finished) {
         
         
@@ -274,6 +283,8 @@
     
 
 }
+
+
 
 #pragma mark - 呼吸灯动画
 -(CABasicAnimation *) AlphaLight:(float)time

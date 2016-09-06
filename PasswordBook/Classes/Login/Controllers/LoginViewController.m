@@ -27,7 +27,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    LoginBackgroundView *bgView = [[LoginBackgroundView alloc]initWithFrame:self.view.bounds];
+    __block LoginBackgroundView *bgView = [[LoginBackgroundView alloc]initWithFrame:self.view.bounds];
         
     
     [self.view addSubview:bgView];
@@ -35,6 +35,45 @@
     [bgView starLightingWithDuration:1.5];
     
 
+    [bgView.boxView confirmButtonDidClick:^(NSString *accountStr, NSString *pwdStr) {
+       
+        NSLog(@"account:%@\npassword:%@",accountStr,pwdStr);
+        
+        [BmobUser loginWithUsernameInBackground:accountStr
+                                       password:pwdStr
+                                          block:^(BmobUser *user, NSError *error) {
+                                            
+                                              if (!error) {
+                                                  
+                                                  [bgView.boxView successLoginingComplete:^{
+                                                      
+                                                      [bgView fadeOutComplete:^{
+                                                          
+                                                          [self animateVCLeavingWithCompletion:^{
+                                                              
+                                                              UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                                                              
+                                                              UIViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
+                                                              
+                                                              [self launchViewController:mainVC];
+                                                              
+                                                          }];
+                                                          
+                                                      }];
+
+                                                  }];
+                                                  
+                                                  
+                                              }else{
+                                                  
+                                                  [bgView warningLight];
+                                                  
+                                              }
+                                     
+            
+                                          }];
+        
+    }];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        
 //        [bgView fadeOutComplete:^{

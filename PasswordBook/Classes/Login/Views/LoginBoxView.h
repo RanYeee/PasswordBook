@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ConfirmBlock)(NSString *accountStr,NSString *pwdStr);
+
 @interface LoginBoxView : UIView
 
 - (void)hideAndLoading;
@@ -15,5 +17,9 @@
 - (void)show;
 
 - (void)endLoading;
+
+- (void)successLoginingComplete:(void(^)())complete;
+
+- (void)confirmButtonDidClick:(ConfirmBlock)confirmBlock;
 
 @end

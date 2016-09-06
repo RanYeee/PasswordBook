@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginBoxView.h"
 
 @interface LoginBackgroundView : UIView
 
+@property (nonatomic,strong) LoginBoxView *boxView;
 
 - (void)starLightingWithDuration:(float)duration;
 
 - (void)fadeOutComplete:(void(^)())complete;
 
+- (void)warningLight;
 @end

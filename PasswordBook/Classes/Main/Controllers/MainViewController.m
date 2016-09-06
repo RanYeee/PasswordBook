@@ -8,8 +8,9 @@
 
 #import "MainViewController.h"
 #import "UIHelpers.h"
+#import "MainViewCell.h"
 
-@interface MainViewController ()
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -19,27 +20,21 @@
     [super viewDidLoad];
 
     
-//    [self buildUI];
+    [self initUI];
     
 
     
-    [self buildUI];
 }
 
-- (void)buildUI {
+- (void)initUI {
 
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    
-    view.backgroundColor = [UIColor blueColor];
-    
-    [self.view addSubview:view];
     // Set hidden initiallly
     for (UIView *subview in self.view.subviews) {
         subview.alpha = 0;
     }
 }
+
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [self animateVCShowingUp];
@@ -53,5 +48,40 @@
         }
     }];
 }
+
+#pragma mark - tabelView delegate & dataSource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 0;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellId = @"MainViewCellID";
+    
+    MainViewCell *cell = (MainViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 50;
+}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    
+//}
+//
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//}
 
 @end

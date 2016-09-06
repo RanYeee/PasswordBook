@@ -20,6 +20,7 @@
         
         self.textColor = [UIColor colorWithHexString:@"#A7C5CF"];
         
+        
     }
     
     return self;
@@ -68,12 +69,30 @@
 
 }
 
-//控制placeHolder的颜色、字体
-- (void)drawPlaceholderInRect:(CGRect)rect
-{
+- (void)drawPlaceholderInRect:(CGRect)rect {//rect代表该自定义textField的frame/rect
+    //因为placeholder属于NSString类型，所有的NSString都有drawInRect方法，但此方法似乎只在draw开头方法中有效
+    [self.placeholder drawInRect:CGRectMake(0, 10, rect.size.width, rect.size.height) withAttributes:@{
+                                                                                                       NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#A7C5CF"],
+                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:15]
+                                                                                                       }];
     
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:@"#A7C5CF"];
-    [self.placeholder drawInRect:rect withAttributes:dict];
+}
+
+//控制显示文本的位置
+-(CGRect)textRectForBounds:(CGRect)bounds
+{
+    //return CGRectInset(bounds, 50, 0);
+    CGRect inset = CGRectMake(bounds.origin.x+10, bounds.origin.y, bounds.size.width -10, bounds.size.height);
+    
+    return inset;
+    
+}
+//控制编辑文本的位置
+-(CGRect)editingRectForBounds:(CGRect)bounds
+{
+    //return CGRectInset( bounds, 10 , 0 );
+    
+    CGRect inset = CGRectMake(bounds.origin.x +10, bounds.origin.y, bounds.size.width -10, bounds.size.height);
+    return inset;
 }
 @end

@@ -82,3 +82,15 @@
 #define IPHONE4 ([[UIScreen mainScreen] bounds].size.height == 480)
 #define IS_AboveIOS7   [[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?YES:NO
 #define kSystemVersion [[UIDevice currentDevice]systemVersion].floatValue
+
+
+
+
+/****************************************/
+
+//Login
+
+#define kLoginAccount  @"kLoginAccount"
+#define kLoginPassword @"kLoginPassword"
+#define kIsRememberPwd @"kIsRememberPwd"
+

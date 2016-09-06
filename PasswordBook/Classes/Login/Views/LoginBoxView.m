@@ -11,12 +11,23 @@
 
 @interface LoginBoxView ()
 
+{
+    BOOL _isRemember;
+    
+    ConfirmBlock _confirmBlock;
+}
 @property (nonatomic,strong) UIImageView *bgImageView;
 
 @property (nonatomic,strong) UIActivityIndicatorView *loadingView;
 
 
 @property (nonatomic,strong) UIButton *confirmBtn;
+
+@property (nonatomic,strong) LoginTextField *accountfield;
+
+
+@property (nonatomic,strong) LoginTextField *pwdfield;
+
 
 @end
 
@@ -71,14 +82,13 @@
 {
     if (!_confirmBtn) {
         
-        
         _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [_confirmBtn setBackgroundImage:[UIImage imageNamed:@"confirmBtn"] forState:UIControlStateNormal];
         
         [_confirmBtn addTarget:self action:@selector(confirmClick) forControlEvents:UIControlEventTouchUpInside];
         
-        _confirmBtn.frame = CGRectMake(20, self.height - 40-20, self.width/2, 40);
+        _confirmBtn.frame = CGRectMake(20, self.height - 40-20, self.width/2-20, 40);
         
         [_confirmBtn setTitleColor:[UIColor colorWithHexString:@"#A7C5CF"] forState:UIControlStateNormal];
         
@@ -99,22 +109,90 @@
     
     [self insertSubview:self.loadingView aboveSubview:self.bgImageView];
     
-    LoginTextField *accountfile = [[LoginTextField alloc]initWithFrame:CGRectMake(20, 30, self.width-40, 44)];
+    //textfield
+    self.accountfield = [[LoginTextField alloc]initWithFrame:CGRectMake(20, 30, self.width-40, 44)];
+
+    self.accountfield.placeholder = @"account";
+    [self.bgImageView addSubview:self.accountfield];
     
-    accountfile.placeholder = @"account";
-    [self.bgImageView addSubview:accountfile];
+    self.pwdfield = [[LoginTextField alloc]initWithFrame:CGRectMake(20, self.accountfield.bottom + 20, self.width-40, 44)];
+
+    self.pwdfield.placeholder = @"password";
+    self.pwdfield.secureTextEntry = YES;
+    [self.bgImageView addSubview:self.pwdfield];
     
-    LoginTextField *pwdfile = [[LoginTextField alloc]initWithFrame:CGRectMake(20, accountfile.bottom + 20, self.width-40, 44)];
-    pwdfile.placeholder = @"password";
-    [self.bgImageView addSubview:pwdfile];
+    //checkbox
+
+  
+    
+    UIButton *checkBox =[UIButton buttonWithType:UIButtonTypeCustom];
+    
+    checkBox.frame = CGRectMake(self.confirmBtn.right+20, self.confirmBtn.y, 22, 24);
+        
+    checkBox.centerY = self.confirmBtn.centerY;
+    
+    [checkBox addTarget:self action:@selector(rememberPasswordClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.bgImageView addSubview:checkBox];
+    
+    //isRemember
+    _isRemember = [[NSUserDefaults standardUserDefaults]boolForKey:kIsRememberPwd];
+    
+    if (_isRemember) {
+        
+        [checkBox setBackgroundImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateNormal];
+        
+        self.accountfield.text = [[NSUserDefaults standardUserDefaults]objectForKey:kLoginAccount];
+        
+        self.pwdfield.text = [[NSUserDefaults standardUserDefaults]objectForKey:kLoginPassword];
+
+    }else{
+        
+        [checkBox setBackgroundImage:[UIImage imageNamed:@"checkbox_off"] forState:UIControlStateNormal];
+
+    }
+    
+    //Remember password Label
+    
+    UILabel *rememberLabel = [[UILabel alloc]initWithFrame:CGRectMake(checkBox.right+10, checkBox.y, self.frame.size.width-checkBox.right, checkBox.height)];
+    
+    rememberLabel.font = [UIFont systemFontOfSize:13];
+    
+    rememberLabel.text = @"Remember me";
+    
+    rememberLabel.textColor = [UIColor colorWithHexString:@"#A7C5CF"];
+    
+    [self.bgImageView addSubview:rememberLabel];
+}
+
+- (void)successLoginingComplete:(void(^)())complete
+{
+    [UIView animateWithDuration:0.5 animations:^{
+//        [self removeAllSubviews];
+        self.bgImageView.alpha = 0.0f;
+        self.transform =  CGAffineTransformMakeScale(0.01f, 0.01f);
+        self.centerX = 0.0f;
+        self.backgroundColor = [UIColor colorWithHexString:@"#86E1EC"];
+    } completion:^(BOOL finished) {
+        
+        [self removeFromSuperview];
+        
+        complete();
+    }];
+
+}
+
+- (void)showLoadingView
+{
+    [self.loadingView startAnimating];
 }
 
 - (void)hideAndLoading
 {
     [UIView animateWithDuration:0.5 animations:^{
         
-        self.bgImageView.transform =  CGAffineTransformMakeScale(0.001f, 0.001f);
-        
+        self.bgImageView.transform =  CGAffineTransformMakeScale(0.01f, 0.01f);
+
     } completion:^(BOOL finished) {
         
         [self.loadingView startAnimating];
@@ -125,7 +203,6 @@
 {
     [self.loadingView stopAnimating];
     
-    [self removeFromSuperview];
 }
 
 - (void)show
@@ -148,6 +225,58 @@
 - (void)confirmClick
 {
     
+    
+        if (isEmptyString(self.accountfield.text ) || isEmptyString(self.pwdfield.text)) {
+            
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"Please fill in textField " delegate:self cancelButtonTitle:@"got it" otherButtonTitles:nil, nil];
+        
+        [alertView show];
+            
+        }else{
+            
+            if (_confirmBlock) {
+                
+                [self showLoadingView];
+                
+                _confirmBlock(self.accountfield.text,self.pwdfield.text);
+
+            }
+
+        }
+    
+}
+
+-(void)confirmButtonDidClick:(ConfirmBlock)confirmBlock
+{
+    _confirmBlock = confirmBlock;
+}
+
+- (void)rememberPasswordClick:(UIButton *)button
+{
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    
+    if (_isRemember) {
+        
+        [button setBackgroundImage:[UIImage imageNamed:@"checkbox_off"] forState:UIControlStateNormal];
+        
+        [userDef removeObjectForKey:kLoginAccount];
+        
+        [userDef removeObjectForKey:kLoginPassword];
+        
+    }else{
+        
+        [button setBackgroundImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateNormal];
+        
+        [userDef setObject:self.accountfield.text forKey:kLoginAccount];
+        
+        [userDef setObject:self.pwdfield.text forKey:kLoginPassword];
+    }
+    
+    _isRemember = !_isRemember;
+    
+    [userDef setBool:_isRemember forKey:kIsRememberPwd];
+    
+    [userDef synchronize];
 }
 
 @end

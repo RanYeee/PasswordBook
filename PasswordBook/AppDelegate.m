@@ -19,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [Bmob registerWithAppKey:@"9c55ef5e4c877a755290b3b9e27bcc77"];
+    
     LoginViewController *loginVC = [[LoginViewController alloc]init];
     
     self.mainNavigationController = [[UINavigationController alloc]initWithRootViewController:loginVC];

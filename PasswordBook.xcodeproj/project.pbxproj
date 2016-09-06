@@ -45,6 +45,18 @@
 		294292031D7D6DE700C6106E /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 294291F11D7D6DE700C6106E /* IQToolbar.m */; };
 		294292041D7D6DE700C6106E /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 294291F31D7D6DE700C6106E /* IQUIView+IQKeyboardToolbar.m */; };
 		294292051D7D6DE700C6106E /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 294291F61D7D6DE700C6106E /* IQKeyboardManager.bundle */; };
+		294292071D7E91B000C6106E /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292061D7E91B000C6106E /* BmobSDK.framework */; };
+		294292091D7E91C900C6106E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292081D7E91C900C6106E /* CoreLocation.framework */; };
+		2942920B1D7E91DF00C6106E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2942920A1D7E91DF00C6106E /* Security.framework */; };
+		2942920D1D7E91E700C6106E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2942920C1D7E91E700C6106E /* CoreGraphics.framework */; };
+		2942920F1D7E91ED00C6106E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2942920E1D7E91ED00C6106E /* MobileCoreServices.framework */; };
+		294292111D7E91F300C6106E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292101D7E91F300C6106E /* CFNetwork.framework */; };
+		294292131D7E91F900C6106E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292121D7E91F900C6106E /* CoreTelephony.framework */; };
+		294292151D7E91FF00C6106E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292141D7E91FF00C6106E /* SystemConfiguration.framework */; };
+		294292171D7E920800C6106E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292161D7E920800C6106E /* libz.1.2.5.tbd */; };
+		294292191D7E920F00C6106E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 294292181D7E920F00C6106E /* libicucore.tbd */; };
+		2942921B1D7E921600C6106E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2942921A1D7E921600C6106E /* libsqlite3.tbd */; };
+		2942921E1D7EBE9000C6106E /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2942921D1D7EBE9000C6106E /* MainViewCell.m */; };
 		2998D27E1D781CE400C27418 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998D27D1D781CE400C27418 /* main.m */; };
 		2998D2811D781CE400C27418 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998D2801D781CE400C27418 /* AppDelegate.m */; };
 		2998D2871D781CE400C27418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2998D2851D781CE400C27418 /* Main.storyboard */; };
@@ -150,6 +162,19 @@
 		294291F31D7D6DE700C6106E /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		294291F41D7D6DE700C6106E /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		294291F61D7D6DE700C6106E /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		294292061D7E91B000C6106E /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
+		294292081D7E91C900C6106E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2942920A1D7E91DF00C6106E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2942920C1D7E91E700C6106E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2942920E1D7E91ED00C6106E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		294292101D7E91F300C6106E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		294292121D7E91F900C6106E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		294292141D7E91FF00C6106E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		294292161D7E920800C6106E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		294292181D7E920F00C6106E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		2942921A1D7E921600C6106E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2942921C1D7EBE9000C6106E /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
+		2942921D1D7EBE9000C6106E /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		2998D2791D781CE400C27418 /* PasswordBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2998D27D1D781CE400C27418 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2998D27F1D781CE400C27418 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +198,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2942921B1D7E921600C6106E /* libsqlite3.tbd in Frameworks */,
+				294292191D7E920F00C6106E /* libicucore.tbd in Frameworks */,
+				294292171D7E920800C6106E /* libz.1.2.5.tbd in Frameworks */,
+				294292151D7E91FF00C6106E /* SystemConfiguration.framework in Frameworks */,
+				294292131D7E91F900C6106E /* CoreTelephony.framework in Frameworks */,
+				294292111D7E91F300C6106E /* CFNetwork.framework in Frameworks */,
+				2942920F1D7E91ED00C6106E /* MobileCoreServices.framework in Frameworks */,
+				2942920D1D7E91E700C6106E /* CoreGraphics.framework in Frameworks */,
+				2942920B1D7E91DF00C6106E /* Security.framework in Frameworks */,
+				294292091D7E91C900C6106E /* CoreLocation.framework in Frameworks */,
+				294292071D7E91B000C6106E /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +269,7 @@
 		290DCFD01D791218008F4B85 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				294292061D7E91B000C6106E /* BmobSDK.framework */,
 				294291D11D7D6DE700C6106E /* IQKeyboardManager */,
 				290DD04B1D7977E4008F4B85 /* Colours */,
 			);
@@ -311,6 +348,8 @@
 		290DCFE31D791322008F4B85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2942921C1D7EBE9000C6106E /* MainViewCell.h */,
+				2942921D1D7EBE9000C6106E /* MainViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -406,6 +445,16 @@
 		2998D2701D781CE400C27418 = {
 			isa = PBXGroup;
 			children = (
+				2942921A1D7E921600C6106E /* libsqlite3.tbd */,
+				294292181D7E920F00C6106E /* libicucore.tbd */,
+				294292161D7E920800C6106E /* libz.1.2.5.tbd */,
+				294292141D7E91FF00C6106E /* SystemConfiguration.framework */,
+				294292121D7E91F900C6106E /* CoreTelephony.framework */,
+				294292101D7E91F300C6106E /* CFNetwork.framework */,
+				2942920E1D7E91ED00C6106E /* MobileCoreServices.framework */,
+				2942920C1D7E91E700C6106E /* CoreGraphics.framework */,
+				2942920A1D7E91DF00C6106E /* Security.framework */,
+				294292081D7E91C900C6106E /* CoreLocation.framework */,
 				2998D27B1D781CE400C27418 /* PasswordBook */,
 				2998D2951D781CE400C27418 /* PasswordBookTests */,
 				2998D2A01D781CE400C27418 /* PasswordBookUITests */,
@@ -633,6 +682,7 @@
 				294291FC1D7D6DE700C6106E /* IQUIWindow+Hierarchy.m in Sources */,
 				294291D01D7D5E9600C6106E /* LoginTextField.m in Sources */,
 				290DD0501D7977E4008F4B85 /* Colours.m in Sources */,
+				2942921E1D7EBE9000C6106E /* MainViewCell.m in Sources */,
 				294292021D7D6DE700C6106E /* IQTitleBarButtonItem.m in Sources */,
 				290DD0401D791F2B008F4B85 /* UIImage+UIImageAddition.m in Sources */,
 				290DCFE41D791322008F4B85 /* MainViewController.m in Sources */,
@@ -781,7 +831,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PasswordBook/ThirdPart",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PasswordBook/PB-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PasswordBook/ThirdPart";
 				INFOPLIST_FILE = PasswordBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -794,7 +849,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PasswordBook/ThirdPart",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PasswordBook/PB-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PasswordBook/ThirdPart";
 				INFOPLIST_FILE = PasswordBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
