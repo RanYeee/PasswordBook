@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -20,31 +21,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainViewCellID" rowHeight="50" id="zy3-Aq-0zE" customClass="MainViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainViewCellID" rowHeight="60" id="zy3-Aq-0zE" customClass="MainViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zy3-Aq-0zE" id="cNr-VC-w5u">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAi-2V-p67">
-                                                    <rect key="frame" x="8" y="-5" width="584" height="47"/>
+                                                    <rect key="frame" x="8" y="-5" width="584" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK6-91-a8H">
-                                                            <rect key="frame" x="8" y="18" width="158" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="158" id="Cy3-yX-k6t"/>
-                                                                <constraint firstAttribute="height" constant="21" id="tkL-j2-mlm"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="8" y="8" width="292" height="49"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.54509803921568623" green="0.71372549019607845" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.42352941176470588" green="0.54509803921568623" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.039215686274509803" green="0.12549019607843137" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.14509803921568626" green="0.14117647058823529" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="leading" secondItem="SAi-2V-p67" secondAttribute="leading" constant="8" id="bIX-6J-uNY"/>
-                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="centerY" secondItem="SAi-2V-p67" secondAttribute="centerY" constant="5" id="x9U-Io-BR4"/>
+                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="height" secondItem="SAi-2V-p67" secondAttribute="height" constant="-8" id="0F4-Oy-d6J"/>
+                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="width" secondItem="SAi-2V-p67" secondAttribute="width" multiplier="1/2" id="D3s-Ev-B2w"/>
+                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="top" secondItem="SAi-2V-p67" secondAttribute="top" constant="8" id="MD5-ti-ydX"/>
+                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="leading" secondItem="SAi-2V-p67" secondAttribute="leading" constant="8" id="hWh-ai-m9A"/>
+                                                        <constraint firstItem="pK6-91-a8H" firstAttribute="leading" secondItem="SAi-2V-p67" secondAttribute="leading" constant="8" id="oaW-PG-QJS"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

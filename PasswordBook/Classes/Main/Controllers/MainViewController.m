@@ -20,13 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#2D3154"];
     
     UIView *bgView = [[UIView alloc]initWithFrame:self.tableView.bounds];
     
-    bgView.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
+    bgView.backgroundColor = [UIColor colorWithHexString:@"#2D3154"];
     
     self.tableView.backgroundView = bgView;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     
     [self initUI];
     
@@ -77,7 +79,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 50;
+    return 60;
 }
 //
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

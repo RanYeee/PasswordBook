@@ -17,7 +17,7 @@
     
     selectBgView.alpha = 0.6f;
     
-    selectBgView.backgroundColor = [UIColor colorWithHexString:@"#1A3943"];
+    selectBgView.backgroundColor = [UIColor colorWithHexString:@"#AAACC8"];
     
     self.selectedBackgroundView = selectBgView;
     

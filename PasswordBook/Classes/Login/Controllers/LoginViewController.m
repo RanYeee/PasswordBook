@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#2D3154"];
     
     __block LoginBackgroundView *bgView = [[LoginBackgroundView alloc]initWithFrame:self.view.bounds];
         
