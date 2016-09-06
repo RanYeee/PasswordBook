@@ -18,4 +18,6 @@
 - (void)fadeOutComplete:(void(^)())complete;
 
 - (void)warningLight;
+
+- (void)stopLighting;
 @end

@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
     
     __block LoginBackgroundView *bgView = [[LoginBackgroundView alloc]initWithFrame:self.view.bounds];
         
@@ -44,6 +44,8 @@
                                           block:^(BmobUser *user, NSError *error) {
                                             
                                               if (!error) {
+                                                  
+                                                  [bgView stopLighting];
                                                   
                                                   [bgView.boxView successLoginingComplete:^{
                                                       

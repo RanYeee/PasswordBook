@@ -585,6 +585,7 @@
 				TargetAttributes = {
 					2998D2781D781CE400C27418 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = U353BQ28K8;
 					};
 					2998D2911D781CE400C27418 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -831,6 +832,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PasswordBook/ThirdPart",
@@ -849,6 +851,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PasswordBook/ThirdPart",

@@ -10,4 +10,5 @@
 
 @interface MainViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 @end

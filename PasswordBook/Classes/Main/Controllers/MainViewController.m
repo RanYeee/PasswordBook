@@ -11,6 +11,7 @@
 #import "MainViewCell.h"
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
+    
+    UIView *bgView = [[UIView alloc]initWithFrame:self.tableView.bounds];
+    
+    bgView.backgroundColor = [UIColor colorWithHexString:@"#01131B"];
+    
+    self.tableView.backgroundView = bgView;
     
     [self initUI];
     
@@ -51,11 +59,6 @@
 
 #pragma mark - tabelView delegate & dataSource
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return 0;
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return 10;
@@ -67,6 +70,7 @@
     
     MainViewCell *cell = (MainViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
+  
     
     return cell;
 }
