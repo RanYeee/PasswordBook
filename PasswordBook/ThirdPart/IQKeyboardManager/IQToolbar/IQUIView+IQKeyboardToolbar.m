@@ -157,6 +157,7 @@
     
     //Right button
     IQBarButtonItem *doneButton = [[IQBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:target action:action];
+    
     doneButton.accessibilityLabel = @"Toolbar Done Button";
     [items addObject:doneButton];
     
@@ -192,7 +193,7 @@
         }
     }
     
-	NSMutableArray *items = [[NSMutableArray alloc] init];
+    NSMutableArray *items = [[NSMutableArray alloc] init];
     
     //Title button
     IQTitleBarButtonItem *title = [[IQTitleBarButtonItem alloc] initWithTitle:self.shouldHideTitle?nil:titleText];
@@ -242,9 +243,9 @@
             default:                        toolbar.barStyle = UIBarStyleDefault;   break;
         }
     }
- 	
-	NSMutableArray *items = [[NSMutableArray alloc] init];
-
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
     //Title button
     IQTitleBarButtonItem *title = [[IQTitleBarButtonItem alloc] initWithTitle:self.shouldHideTitle?nil:titleText];
     [items addObject:title];
@@ -367,7 +368,8 @@
     [items addObject:[[self class] flexibleBarButtonItem]];
     
     //Done button
-    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:doneAction];
+//    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:doneAction];
+    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:target action:doneAction];
     [items addObject:doneButton];
     
     //  Adding button to toolBar.
@@ -406,9 +408,9 @@
             default:                        toolbar.barStyle = UIBarStyleDefault;   break;
         }
     }
- 
-	NSMutableArray *items = [[NSMutableArray alloc] init];
-	
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
     //        UIBarButtonItem *prev = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:target action:previousAction];
     //        UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:target action:nextAction];
     
@@ -436,7 +438,7 @@
     IQBarButtonItem *prev = [[IQBarButtonItem alloc] initWithImage:imageLeftArrow style:UIBarButtonItemStylePlain target:target action:previousAction];
     prev.accessibilityLabel = @"Toolbar Previous Button";
     [items addObject:prev];
-
+    
     //Fixed space
     IQBarButtonItem *fixed =[[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     [fixed setWidth:20];
@@ -446,7 +448,7 @@
     IQBarButtonItem *next = [[IQBarButtonItem alloc] initWithImage:imageRightArrow style:UIBarButtonItemStylePlain target:target action:nextAction];
     next.accessibilityLabel = @"Toolbar Next Button";
     [items addObject:next];
-
+    
     //Flexible space
     [items addObject:[[self class] flexibleBarButtonItem]];
     
@@ -458,12 +460,13 @@
     [items addObject:[[self class] flexibleBarButtonItem]];
     
     //Done button
-    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:doneAction];
-	[items addObject:doneButton];
-	
+//    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:doneAction];
+    IQBarButtonItem *doneButton =[[IQBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:target action:doneAction];
+    [items addObject:doneButton];
+    
     //  Adding button to toolBar.
     [toolbar setItems:items];
-	
+    
     //  Setting toolbar to keyboard.
     [(UITextField*)self setInputAccessoryView:toolbar];
 }
@@ -522,7 +525,7 @@
         imageLeftArrow = [imageLeftArrow imageFlippedForRightToLeftLayoutDirection];
         imageRightArrow = [imageRightArrow imageFlippedForRightToLeftLayoutDirection];
     }
-
+    
     //Previous button
     IQBarButtonItem *prev = [[IQBarButtonItem alloc] initWithImage:imageLeftArrow style:UIBarButtonItemStylePlain target:target action:previousAction];
     prev.accessibilityLabel = @"Toolbar Previous Button";
@@ -668,21 +671,21 @@
     //  If it is IQToolbar and it's items are greater than zero.
     if ([inputAccessoryView isKindOfClass:[IQToolbar class]] && [[inputAccessoryView items] count]>0)
     {
-		if ([[inputAccessoryView items] count]>3)
-		{
-			//  Getting first item from inputAccessoryView.
-			IQBarButtonItem *prevButton = (IQBarButtonItem*)[inputAccessoryView items][0];
-			IQBarButtonItem *nextButton = (IQBarButtonItem*)[inputAccessoryView items][2];
-			
-			//  If it is UIBarButtonItem and it's customView is not nil.
-			if ([prevButton isKindOfClass:[IQBarButtonItem class]] && [nextButton isKindOfClass:[IQBarButtonItem class]])
-			{
+        if ([[inputAccessoryView items] count]>3)
+        {
+            //  Getting first item from inputAccessoryView.
+            IQBarButtonItem *prevButton = (IQBarButtonItem*)[inputAccessoryView items][0];
+            IQBarButtonItem *nextButton = (IQBarButtonItem*)[inputAccessoryView items][2];
+            
+            //  If it is UIBarButtonItem and it's customView is not nil.
+            if ([prevButton isKindOfClass:[IQBarButtonItem class]] && [nextButton isKindOfClass:[IQBarButtonItem class]])
+            {
                 if (prevButton.enabled != isPreviousEnabled)
                     [prevButton setEnabled:isPreviousEnabled];
                 if (nextButton.enabled != isNextEnabled)
                     [nextButton setEnabled:isNextEnabled];
-			}
-		}
+            }
+        }
     }
 }
 
