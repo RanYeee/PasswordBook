@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *title_Label;
 
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @end

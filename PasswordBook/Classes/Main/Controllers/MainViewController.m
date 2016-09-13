@@ -10,16 +10,21 @@
 #import "MainViewController.h"
 #import "UIHelpers.h"
 #import "MainViewCell.h"
+#import "EditViewController.h"
+#import "MJExtension.h"
+#import "CodeModel.h"
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     CGFloat _tmpOffsetY;
     
     CGFloat _angle;
+    
+    NSArray *_dataArray;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIButton *addButton;
-@property (strong, nonatomic) IBOutlet UIStackView *stackView;
+@property (strong, nonatomic)  UIButton *addButton;
+@property (strong, nonatomic)  UIButton *menuButton;
 
 @end
 
@@ -37,22 +42,55 @@
     self.tableView.backgroundView = bgView;
     
 //    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
-    
+
     [self initUI];
     
-
+    [self initData];
     
+
 }
 
 - (void)initUI {
-
+    
+    self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    self.addButton.frame = CGRectMake(0, 0, 15, 14);
+    
+    [self.addButton setBackgroundImage:[UIImage imageNamed:@"addButton"] forState:UIControlStateNormal];
+   
+    [self.addButton addTarget:self action:@selector(addNewItem) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:self.addButton];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // Set hidden initiallly
     for (UIView *subview in self.view.subviews) {
         subview.alpha = 0;
     }
 }
 
+//加载数据
+- (void)initData
+{
+    __weak typeof(self) weakSelf = self;
+    
+    BmobQuery *query = [BmobQuery queryWithClassName:@"Code"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+       
 
+        _dataArray = [CodeModel configObjectWithArray:array];
+        
+        [weakSelf.tableView reloadData];
+        
+        NSLog(@"%@",array);
+        
+    }];
+    
+    Bmob
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [self animateVCShowingUp];
@@ -71,7 +109,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return _dataArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -80,7 +118,9 @@
     
     MainViewCell *cell = (MainViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
-  
+    CodeModel *model = _dataArray[indexPath.row];
+    
+    cell.title_Label.text = model.title;
     
     return cell;
 }
@@ -98,98 +138,72 @@
 //    
 //}
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)addNewItem
 {
+    EditViewController *editController = [EditViewController loadStroyBoardVC];
     
-    CGFloat offsetY = scrollView.contentOffset.y + 20;
-    
-
-        if (offsetY<0) {
-            
-            self.stackView.spacing = offsetY+150;
-
-            
-           if(offsetY <= -60){
-                
-                self.stackView.spacing = -60+150;
-               
-               
-           }else{
-               
-               self.stackView.spacing = offsetY+150;
-
-           }
-            
-
-    }
-//    NSLog(@"%f",offsetY);
-    
-    _tmpOffsetY = offsetY;
- 
+    [self.navigationController pushViewController:editController animated:YES];
 }
 
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
-    CGFloat offsetY = scrollView.contentOffset.y+20;
-    NSLog(@"%f",offsetY);
-
-    if (offsetY<=-60) {
+    NSLog(@"%f",scrollView.contentOffset.y);
+    
+    if (scrollView.contentOffset.y+64 < -60) {
         
-        [UIView animateWithDuration:0.2 animations:^{
-        
-//            self.stackView.spacing = -100+150;
-            _tableView.contentInset = UIEdgeInsetsMake(60, 0, 0, 0);
-
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            _tableView.contentInset = UIEdgeInsetsMake(124, 0, 0, 0);
+            
+        } completion:^(BOOL finished) {
+            
+            NSLog(@"发起下拉刷新");
+            [self startAnimation];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [UIView animateWithDuration:0.5 animations:^{
+                    
+                    _tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+                    
+                    [self stopAnimation];
+                    
+                }];
+                
+            });
+            
         }];
         
-        [self startAnimation];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [UIView animateWithDuration:0.5 animations:^{
-                self.stackView.spacing = 150;
-                _tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-                
-                [self.addButton.layer removeAllAnimations];
-            }];
-        });
     }
-    
-}
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    NSLog(@"end");
 }
 
 
 
--(CABasicAnimation *)rotation:(float)dur degree:(float)degree direction:(int)direction repeatCount:(int)repeatCount
-{
-    CATransform3D rotationTransform = CATransform3DMakeRotation(degree, 0, 0, direction);
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
-    animation.toValue = [NSValue valueWithCATransform3D:rotationTransform];
-    animation.duration  =  dur;
-    animation.autoreverses = NO;
-    animation.cumulative = NO;
-    animation.fillMode = kCAFillModeForwards;
-    animation.repeatCount = repeatCount;
-    animation.delegate = self;
-    
-    return animation;
-    
-}
-
-//方法2
 - (void)startAnimation
 {
-    CGAffineTransform endAngle = CGAffineTransformMakeRotation(_angle * (M_PI / 180.0f));
+    CABasicAnimation *animation =  [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    //默认是顺时针效果，若将fromValue和toValue的值互换，则为逆时针效果
+    animation.fromValue = [NSNumber numberWithFloat:0.f];
+    animation.toValue =  [NSNumber numberWithFloat: M_PI *2];
+    animation.duration  = 1.0;
+    animation.autoreverses = NO;
+    animation.fillMode =kCAFillModeForwards;
+    animation.repeatCount = MAXFLOAT;
+    [self.addButton.layer addAnimation:animation forKey:nil];
+    [self.menuButton.layer addAnimation:animation forKey:nil];
+    self.addButton.enabled = NO;
+    self.menuButton.enabled = NO;
+}
+
+- (void)stopAnimation
+{
+    [self.addButton.layer removeAllAnimations];
     
-    [UIView animateWithDuration:0.001 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        self.addButton.transform = endAngle;
-    } completion:^(BOOL finished) {
-        _angle += 5;
-        [self startAnimation];
-    }];
+    [self.menuButton.layer removeAllAnimations];
+    
+    self.addButton.enabled = YES;
+    
+    self.menuButton.enabled = YES;
+
 }
 @end

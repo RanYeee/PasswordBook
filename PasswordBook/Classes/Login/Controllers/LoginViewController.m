@@ -36,7 +36,7 @@
     
 
     [bgView.boxView confirmButtonDidClick:^(NSString *accountStr, NSString *pwdStr) {
-       
+
         NSLog(@"account:%@\npassword:%@",accountStr,pwdStr);
         
         [BmobUser loginWithUsernameInBackground:accountStr
@@ -76,30 +76,24 @@
                                           }];
         
     }];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
-//        [bgView fadeOutComplete:^{
-//           
-//            [self animateVCLeavingWithCompletion:^{
-//                
-//                [self launchViewController:[[MainViewController alloc]init]];
-//                
-//            }];
-//            
-//        }];
-//  
-//    });
-//  
+
 }
 
 
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES];
-}
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    
+//    [self.navigationController setNavigationBarHidden:YES];
+//}
+//
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    
+//    self.navigationController.navigationBarHidden = NO;
+//}
 
 - (void)launchViewController:(UIViewController *)launchVC
 {

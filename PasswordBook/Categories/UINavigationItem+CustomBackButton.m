@@ -23,7 +23,7 @@ static char kCustomBackButtonKey;
     }
     item = objc_getAssociatedObject(self, &kCustomBackButtonKey);
     if (!item) {
-        item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:NULL];
+        item = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
         
     
         

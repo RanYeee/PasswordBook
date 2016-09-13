@@ -27,9 +27,18 @@
     
     self.window.rootViewController = self.mainNavigationController;
     
+    [self.mainNavigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bar_background.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.mainNavigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navigation_bar_background.png"]];
+    
+    [self.mainNavigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+//    self.mainNavigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    
     [self.window makeKeyAndVisible];
     
     [[IQKeyboardManager sharedManager]setEnable:YES];
+    
     
     return YES;
 }
